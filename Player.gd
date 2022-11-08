@@ -2,8 +2,11 @@ extends KinematicBody2D
 
 
 # Declare member variables here. Examples:
-var speed = 400
-var body_size = 10
+var body_size = 10.0
+const DEF_BOD_SIZE = 10.0
+
+const MAX_SPEED = 1000.0
+var speed = 500.0
 var accel = 0.2
 var deccel = 0.1
 
@@ -52,10 +55,12 @@ func process_movement(time):
 
 # moves player
 func animate_player():
-	pass
+	scale = Vector2(body_size/DEF_BOD_SIZE, body_size/DEF_BOD_SIZE)
+	speed = 1000 * exp(0.1 * log(0.2) * body_size)
 
 func shoot(type, direction):
-	# TODO - Eject a bullet
-	
-	scale = scale - Vector2(0.1, 0.1)
-	pass
+	if type == 0 and body_size > 1:
+		body_size -= 1
+			
+		# TODO shoot a bullet
+	print(speed)
