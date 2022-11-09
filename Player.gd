@@ -18,7 +18,7 @@ var alive = true
 
 func _physics_process(delta: float) -> void:
 	get_input()
-	process_movement(delta)
+	process_movement()
 	animate_player()
 
 # gets player input
@@ -45,7 +45,7 @@ func get_input():
 
 
 # calculates player velocity
-func process_movement(time):
+func process_movement():
 	if direction != Vector2.ZERO and alive:
 		velocity = lerp(velocity, speed * direction, accel)
 	else:
