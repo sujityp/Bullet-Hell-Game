@@ -5,7 +5,7 @@ extends Area2D
 const SCREEN_WIDTH = 1024
 const SCREEN_HEIGHT = 600
 
-var speed = 930
+var speed = 5
 var direction = Vector2(1,0)
 
 
